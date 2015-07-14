@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset/reset.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/docs.css">
+
+<link rel="stylesheet" href="css/fullscreen.css">
+<script src="js/fullscreen.js"></script>
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+      
+    <!--[if lt IE 9]>
+      <script src="js/vendor/selectivizr-1.0.3b.min.js"></script>
+      <script src="js/vendor/respond-1.4.2.min.js"></script>
+      <script src="js/vendor/calc.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!--[if IE]>
+      <div class="browsehappy">
+        <p>
+          You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.
+        </p>
+      </div>
+    <![endif]-->
+      <div id="MySplitter" >
+      <div id="leftPane">
+        <div class="wrap"><div class="border"><textarea id="code"></textarea></div></div>
+          </div>
+       
+          
+      <div id="rightPane">ramnani</div>
+      </div>
+      
+      
+</body>
+ 
+    <!--[if lt IE 9]>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <![endif]-->
+    
+    
+       <script src="js/vendor/jquery_002.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+      <script src="js/plugins.js"></script>
+      <script src="js/main.js"></script>
+    <script src="js/splitter.js"></script>
+       <script src="js/codemirror.js"></script>    
+     <script>
+      
+      var  monkeyPatch = function(info){
+          console.log("called");
+       $("#rightPane").toggle();   
+       $(".vsplitbar").toggle();
+          
+      };
+      
+    (function() {
+      // Create a CM instance
+      var ed = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        lineWrapping: true,
+        readOnly: false,
+        dragDrop: true,
+      extraKeys: {
+        "F11": function(cm) {
+          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+          monkeyPatch();
+            
+        },
+        "Esc": function(cm) {
+          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+             monkeyPatch();
+           
+        }
+      }
+          
+      });
+     
+    })();
+  </script>
+
+  </body>
+</html>
