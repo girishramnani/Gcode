@@ -1,0 +1,85 @@
+
+    html, body { height: 100%; margin: 0; padding: 0; }
+    .wrap {
+        position: relative;
+        height: 92vh;
+        background: #eee;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .border {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: 1px solid #999;
+        position: relative;
+        height: 100%;
+        padding: 1px;
+    }
+    .CodeMirror {
+        height: 100%;
+        background: white;
+    }
+    </style>
+
+
+
+body {
+	padding: 0;
+}
+
+/*
+ * Splitter container. Set this to the desired width and height
+ * of the combined left and right panes. In this example, the
+ * height is fixed and the width is the full width of the body,
+ * less the margin on the splitter itself.
+ */
+#MySplitter {
+    display: block;
+	height: 93vh;
+    width: 95vw;
+	margin: 1em 1em;
+	border: 4px solid #bdb;
+    position: absolute;
+	/* No padding allowed */
+}
+/*
+ * Left-side element of the splitter. Use pixel units for the
+ * min-width and max-width; the splitter plugin parses them to
+ * determine the splitter movement limits. Set the width to
+ * the desired initial width of the element; the plugin changes
+ * the width of this element dynamically.
+ */
+#leftPane {
+	overflow: auto;
+    z-index: -1;
+	/* No margin or border allowed */
+}
+/*
+ * Right-side element of the splitter.
+ */
+#rightPane {
+	overflow: auto;
+    z-index: -1;
+	/* No margin or border allowed */
+}
+
+#code {
+ 
+    height: 100vh;
+}
+/* 
+ * Splitter bar style; the .active class is added when the
+ * mouse is over the splitter or the splitter is focused
+ * via the keyboard taborder or an accessKey. 
+ */
+#MySplitter .vsplitbar {
+    height: 93vh;
+	width: 6px;
+	background: #aca url(../img/vgrabber.gif) no-repeat center;
+}
+#MySplitter .vsplitbar.active {
+    height: 93vh;
+	background: #da8 url(../img/vgrabber.gif) no-repeat center;
+	opacity: 0.7;
+}
