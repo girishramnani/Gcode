@@ -28,6 +28,16 @@ body {
 	padding: 0;
 }
 
+.run {
+  z-index: 100;
+  padding: 10px;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+
+
+}
+
 /*
  * Splitter container. Set this to the desired width and height
  * of the combined left and right panes. In this example, the
@@ -65,13 +75,13 @@ body {
 }
 
 #code {
- 
+
     height: 100vh;
 }
-/* 
+/*
  * Splitter bar style; the .active class is added when the
  * mouse is over the splitter or the splitter is focused
- * via the keyboard taborder or an accessKey. 
+ * via the keyboard taborder or an accessKey.
  */
 #MySplitter .vsplitbar {
     height: 93vh;
@@ -85,10 +95,10 @@ body {
 }
 
 .iframe-wrapper {
- 
+
     background: grey;
     height: 100%;
-    
+
 }
 
 iframe {
@@ -98,6 +108,6 @@ iframe {
     height:98%;
     background: white;
     margin: 5px 5px 5px 5px;
-    
-    
+
+
 }
